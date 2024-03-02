@@ -19,3 +19,5 @@ texture = SubResource("CurveTexture_livnt")
 shape = SubResource("RectangleShape2D_k8ya4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0

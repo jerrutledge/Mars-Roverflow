@@ -12,3 +12,4 @@ texture = ExtResource("2_qauqx")
 
 [node name="Rover" parent="." instance=ExtResource("1_rvqjd")]
 position = Vector2(200, 169)
+level_size = Vector2(1500, 1500)
