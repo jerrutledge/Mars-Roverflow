@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db87imsybado5"]
+
+[ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
+
+[node name="Mars" type="Node2D"]
+
+[node name="Rover" parent="." instance=ExtResource("1_rvqjd")]
+position = Vector2(200, 169)
