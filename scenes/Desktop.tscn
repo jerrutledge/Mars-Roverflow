@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyhp0qnfe08rs"]
+
+[ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
+
+[node name="Desktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoverControllerWindow" type="Window" parent="."]
+title = "RoverController.exe"
+position = Vector2i(20, 20)
+size = Vector2i(400, 300)
+
+[node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
