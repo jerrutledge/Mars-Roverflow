@@ -22,7 +22,6 @@ text = "asdasdasdasdasdasdasdasdasd
 adadasdasdasd
 asdas
 dasd"
-autowrap_mode = 3
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="size_changed" from="." to="." method="_on_size_changed"]

@@ -15,8 +15,6 @@ func _on_close_requested():
 func _process(_delta):
 	pass
 
-func _on_close_requested():
-	hide()
 
 func _on_size_changed():
 	$Text.size = size
