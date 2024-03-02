@@ -3,7 +3,6 @@ signal deleted
 
 
 @onready var label = $HBoxContainer/Label
-@onready var text_window = preload("res://scenes/TextWindow.tscn")
 
 var hex_chars = "0123456789ABCDEF"
 var data : String = ""

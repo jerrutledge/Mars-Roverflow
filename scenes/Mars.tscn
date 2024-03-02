@@ -6,6 +6,12 @@
 
 [node name="Mars" type="Node2D"]
 
+[node name="Background2" type="TextureRect" parent="."]
+offset_top = 860.0
+offset_right = 1700.0
+offset_bottom = 1733.0
+texture = ExtResource("2_qauqx")
+
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
