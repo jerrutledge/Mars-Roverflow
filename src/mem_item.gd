@@ -1,4 +1,7 @@
 extends ReferenceRect
+signal deleted
+
+
 @onready var label = $HBoxContainer/Label
 
 var hex_chars = "0123456789ABCDEF"
@@ -28,8 +31,10 @@ func _input(event):
 				Global._on_open_item(self)
 			else:
 				last_click_time = current_time
-			
 		else:
 			selected = true
 			$SelectRect.visible = false
-	
+	if Input.is_action_pressed('delete'):
+		if selected:
+			deleted.emit()
+			queue_free()
