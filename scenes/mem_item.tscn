@@ -14,11 +14,13 @@ script = ExtResource("1_tbqdm")
 
 [node name="SelectRect" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 238.0
 offset_bottom = 37.0
 color = Color(9.62615e-07, 0.627567, 0.972267, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 174.0
 offset_bottom = 32.0
 

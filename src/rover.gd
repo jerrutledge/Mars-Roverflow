@@ -24,9 +24,6 @@ func _process(delta):
 
 	if vel.length() > 0:
 		vel = vel.normalized() * speed
-		#$AnimatedSprite2D.play()
-	#else:
-		#$AnimatedSprite2D.stop()
 	
 	position += vel * delta
 	position = position.clamp(Vector2(16,16), level_size - Vector2(16,16))
