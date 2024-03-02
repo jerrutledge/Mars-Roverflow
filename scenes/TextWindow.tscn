@@ -15,12 +15,16 @@ offset_right = 500.0
 offset_bottom = 500.0
 
 [node name="Text" type="Label" parent="."]
-offset_right = 136.0
-offset_bottom = 101.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "asdasdasdasdasd
 adadasdasdasd
 asdas
 dasd"
+autowrap_mode = 3
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
