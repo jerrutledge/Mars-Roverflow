@@ -3,15 +3,31 @@
 [ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="1_sflfe"]
 [ext_resource type="Script" path="res://src/mem_item.gd" id="1_tbqdm"]
 
-[node name="MemItem" type="HBoxContainer"]
-size_flags_vertical = 0
+[node name="MemItem" type="ReferenceRect"]
+custom_minimum_size = Vector2(0, 37)
+anchors_preset = -1
+anchor_right = 0.223
+anchor_bottom = 0.123
+offset_right = 59.6
+offset_bottom = -36.8
 script = ExtResource("1_tbqdm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SelectRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 238.0
+offset_bottom = 37.0
+color = Color(9.62615e-07, 0.627567, 0.972267, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 174.0
+offset_bottom = 32.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
 texture = ExtResource("1_sflfe")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Welcome to NASA"
