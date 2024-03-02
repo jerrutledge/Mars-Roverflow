@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnundixphma7d"]
 
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_0jkox"]
-[ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="2_ip2xc"]
+[ext_resource type="PackedScene" uid="uid://dssepk3bcd32j" path="res://scenes/mem_item.tscn" id="2_w0id5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x32xj"]
 bg_color = Color(1, 1, 1, 1)
@@ -23,14 +23,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MemItem" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MemItem" parent="VBoxContainer" instance=ExtResource("2_w0id5")]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MemItem"]
-layout_mode = 2
-texture = ExtResource("2_ip2xc")
-
-[node name="Label" type="Label" parent="VBoxContainer/MemItem"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Welcome to NASA"
