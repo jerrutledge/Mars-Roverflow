@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=6 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
+[ext_resource type="Script" path="res://src/Desktop.gd" id="2_207jo"]
 [ext_resource type="PackedScene" uid="uid://bnundixphma7d" path="res://scenes/MemoryManager.tscn" id="3_hlkov"]
 [ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="3_qhokj"]
 
@@ -13,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xlljx")
+script = ExtResource("2_207jo")
 
 [node name="RoverControllerWindow" type="Window" parent="."]
 title = "RoverController.exe"
