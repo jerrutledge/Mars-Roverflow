@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://db87imsybado5"]
+[gd_scene load_steps=3 format=3 uid="uid://db87imsybado5"]
 
 [ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
+[ext_resource type="Texture2D" uid="uid://cl8aa6nbfd13p" path="res://assets/Mars_Rift.jpg" id="2_qauqx"]
 
 [node name="Mars" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qauqx")
 
 [node name="Rover" parent="." instance=ExtResource("1_rvqjd")]
 position = Vector2(200, 169)
