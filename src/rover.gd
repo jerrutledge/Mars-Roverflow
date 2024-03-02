@@ -8,25 +8,25 @@ func _ready():
 	# set camera limit to level_size
 	camera_2d.limit_left = 0
 	camera_2d.limit_top = 0
-	camera_2d.limit_right = level_size.x
-	camera_2d.limit_bottom = level_size.y
+	camera_2d.limit_right = int(level_size.x)
+	camera_2d.limit_bottom = int(level_size.y)
 
 func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
+	var vel = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("rover_right"):
-		velocity.x += 1
+		vel.x += 1
 	if Input.is_action_pressed("rover_left"):
-		velocity.x -= 1
+		vel.x -= 1
 	if Input.is_action_pressed("rover_down"):
-		velocity.y += 1
+		vel.y += 1
 	if Input.is_action_pressed("rover_up"):
-		velocity.y -= 1
+		vel.y -= 1
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	if vel.length() > 0:
+		vel = vel.normalized() * speed
 		#$AnimatedSprite2D.play()
 	#else:
 		#$AnimatedSprite2D.stop()
 	
-	position += velocity * delta
+	position += vel * delta
 	position = position.clamp(Vector2(16,16), level_size - Vector2(16,16))
