@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2owmrpbbdqoe"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_livnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ya4"]
+size = Vector2(32, 32)
+
+[node name="Rover" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 4.76837e-07)
+scale = Vector2(0.125, 32)
+texture = SubResource("CurveTexture_livnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k8ya4")
