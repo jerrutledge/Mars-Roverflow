@@ -29,6 +29,13 @@ func _input(event):
 			var current_time = Time.get_ticks_msec()
 			if current_time - last_click_time < double_click_limit:
 				Global._on_open_item(self)
+				var manager = get_parent()
+				var desktop = manager.get_parent()
+				var window = text_window.instantiate()
+				window.position = Vector2(global_position.x + 400, global_position.y + 200)
+				window.title = label.text
+				window.get_node("Text").text = data
+				desktop.add_child(window)
 			else:
 				last_click_time = current_time
 		else:
