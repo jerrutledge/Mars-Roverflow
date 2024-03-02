@@ -1,14 +1,14 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bjucq5pd47bal"]
 
-[ext_resource type="Texture2D" uid="uid://dx1rodqmv5cuy" path="res://assets/windows95_window_focused.png" id="1_iiu5n"]
+[ext_resource type="Texture2D" uid="uid://dx1rodqmv5cuy" path="res://assets/windows95_window_focused.png" id="1_mbl0q"]
 
 [resource]
-texture = ExtResource("1_iiu5n")
+texture = ExtResource("1_mbl0q")
 texture_margin_left = 5.0
-texture_margin_top = 31.0
+texture_margin_top = 32.0
 texture_margin_right = 5.0
 texture_margin_bottom = 4.0
 expand_margin_left = 4.0
-expand_margin_top = 31.0
+expand_margin_top = 32.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
