@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://db87imsybado5"]
+[gd_scene load_steps=4 format=3 uid="uid://db87imsybado5"]
 
 [ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
 [ext_resource type="Texture2D" uid="uid://cl8aa6nbfd13p" path="res://assets/Mars_Rift.jpg" id="2_qauqx"]
+[ext_resource type="PackedScene" uid="uid://dnclkmmwhfs6v" path="res://scenes/collectible.tscn" id="3_udfk4"]
 
 [node name="Mars" type="Node2D"]
 
@@ -13,3 +14,20 @@ texture = ExtResource("2_qauqx")
 [node name="Rover" parent="." instance=ExtResource("1_rvqjd")]
 position = Vector2(200, 169)
 level_size = Vector2(1500, 1500)
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(360, 76)
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(486, 103)
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(401, 206)
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(554, 268)
+
+[node name="Collectible5" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(665, 171)
