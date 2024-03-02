@@ -36,5 +36,9 @@ func _input(event):
 			$SelectRect.visible = false
 	if Input.is_action_pressed('delete'):
 		if selected:
-			deleted.emit()
-			queue_free()
+			delete_item()
+
+func delete_item():
+	deleted.emit()
+	queue_free()
+	
