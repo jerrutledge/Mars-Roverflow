@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://chy4t5p2lyr58"]
+
+[ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_n3stx"]
+[ext_resource type="Script" path="res://scenes/TextWindow.gd" id="2_wf6u5"]
+
+[node name="TextWindow" type="Window"]
+title = "Text Window"
+position = Vector2i(0, 33)
+size = Vector2i(250, 250)
+theme = ExtResource("1_n3stx")
+script = ExtResource("2_wf6u5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="Text" type="Label" parent="."]
+offset_right = 136.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "asdasdasdasdasd
+adadasdasdasd
+asdas
+dasd"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

@@ -25,7 +25,7 @@ size = Vector2i(400, 300)
 
 [node name="MemoryManager" type="Window" parent="."]
 title = "Memory Manager"
-position = Vector2i(480, 80)
+position = Vector2i(480, 66)
 size = Vector2i(300, 400)
 
 [node name="MemoryManagerBase" parent="MemoryManager" instance=ExtResource("3_hlkov")]
