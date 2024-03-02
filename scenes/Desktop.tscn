@@ -20,6 +20,18 @@ size = Vector2i(400, 300)
 
 [node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
 
+[node name="MemoryManager" type="Window" parent="."]
+title = "Memory Manager"
+position = Vector2i(480, 80)
+size = Vector2i(300, 400)
+
+[node name="Base" type="Panel" parent="MemoryManager"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Taskbar" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 1
