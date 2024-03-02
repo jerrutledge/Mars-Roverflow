@@ -28,6 +28,8 @@ func _input(event):
 				var desktop = manager.get_parent()
 				var window = text_window.instantiate()
 				window.position = Vector2(global_position.x + 400, global_position.y + 200)
+				window.title = label.text
+				window.get_node("Text").text = data
 				desktop.add_child(window)
 				print("Click!")
 			else:
