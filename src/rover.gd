@@ -26,6 +26,12 @@ func _process(delta):
 	if vel.length() > 0:
 		vel = vel.normalized() * speed
 	
+	if vel.x > 0:
+		$Sprite2D.flip_h = false
+	if vel.x < 0:
+		$Sprite2D.flip_h = true
+	
+	
 	position += vel * delta
 	position = position.clamp(Vector2(16,16), level_size - Vector2(16,16))
 

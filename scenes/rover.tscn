@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2owmrpbbdqoe"]
 
 [ext_resource type="Script" path="res://src/rover.gd" id="1_lgpwc"]
-
-[sub_resource type="CurveTexture" id="CurveTexture_livnt"]
+[ext_resource type="Texture2D" uid="uid://cjro2pmewp3as" path="res://assets/Mars_Rover_decimated.png" id="2_vebsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ya4"]
 size = Vector2(32, 32)
@@ -13,8 +12,7 @@ script = ExtResource("1_lgpwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, 4.76837e-07)
-scale = Vector2(0.125, 32)
-texture = SubResource("CurveTexture_livnt")
+texture = ExtResource("2_vebsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k8ya4")
