@@ -38,13 +38,13 @@ func _on_game_over():
 
 func play_bing():
 	$bing.play()
-	
+
 func play_failure():
 	$failure.play()
-	
+
 func play_success():
 	$success.play()
-	
+
 func play_delete():
 	$delete.play()
 
@@ -61,5 +61,5 @@ func make_dragged_item(creator):
 	return new_item
 
 func _on_timer_timeout():
-	Global.score_add(-1)
+	Global.score_add(-1, false)
 	$Timer.start(5)

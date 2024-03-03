@@ -44,10 +44,11 @@ func restart():
 func play_deleted_sound():
 	desktop.play_delete()
 
-func score_add(score_diff):
-	if score_diff > 10:
-		desktop.play_success()
-	if score_diff < 0:
-		desktop.play_failure()
+func score_add(score_diff, and_play_sound=true):
+	if and_play_sound:
+		if score_diff > 10:
+			desktop.play_success()
+		if score_diff < 0:
+			desktop.play_failure()
 	score += score_diff
 	new_score.emit(score)
