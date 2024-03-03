@@ -22,7 +22,7 @@ func _process(_delta):
 			if mem_item:
 				mem_item.delete_item(false)
 			if is_valid:
-				Global.score_add(50)
+				Global.score_add(100)
 			else:
 				Global.score_add(-25)
 			queue_free()
