@@ -30,9 +30,10 @@ func get_offscreen_coords():
 	return level_size - Vector2(8, 8)
 
 func _on_alien_timer_timeout():
-	alien_timer.start(randi_range(16, 32))
+	alien_timer.start(randi_range(12, 32 - (aliens.get_child_count() * 2)))
 	if aliens.get_child_count() >= 8:
 		return # too many aliens already
 	var new_alien : Node2D = alien_obj.instantiate()
 	new_alien.position = get_offscreen_coords()
-	collectibles.add_child(new_alien)
+	new_alien.run_speed += aliens.get_child_count() * 16
+	aliens.add_child(new_alien)
