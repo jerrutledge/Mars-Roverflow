@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://0hla8svkgnr2"]
+
+[ext_resource type="Script" path="res://src/Alien.gd" id="1_f6d16"]
+[ext_resource type="Texture2D" uid="uid://ctmhqapwtfkho" path="res://assets/virus.png" id="1_ov776"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgd4"]
+size = Vector2(16, 16)
+
+[node name="Alien" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_f6d16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bvgd4")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ov776")
+
+[connection signal="body_entered" from="." to="." method="_on_hit"]

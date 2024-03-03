@@ -40,8 +40,15 @@ position = Vector2(554, 268)
 [node name="Collectible5" parent="Collectibles" instance=ExtResource("3_udfk4")]
 position = Vector2(665, 171)
 
+[node name="Aliens" type="Node2D" parent="."]
+
 [node name="CollectibleTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 autostart = true
 
+[node name="AlienTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
 [connection signal="timeout" from="CollectibleTimer" to="." method="_on_collectible_timer_timeout"]
+[connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]

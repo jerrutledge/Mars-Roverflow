@@ -27,5 +27,6 @@ func replicate_virus(virus):
 	game_over_check()
 	var new_item = mem_item_tscn.instantiate()
 	new_item.is_virus = true
-	new_item.data = virus.data
+	if virus:
+		new_item.data = virus.data
 	v_box_container.add_child(new_item)
