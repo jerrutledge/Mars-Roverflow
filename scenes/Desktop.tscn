@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=9 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bnundixphma7d" path="res://scenes/MemoryManager.tscn" id="3_hlkov"]
 [ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="3_qhokj"]
 [ext_resource type="PackedScene" uid="uid://bt6nrsl1aluhf" path="res://scenes/score_panel.tscn" id="5_b3l3f"]
+[ext_resource type="Texture2D" uid="uid://cty776kh62ayt" path="res://assets/File_image.png" id="7_d57pg"]
+[ext_resource type="Script" path="res://src/SaveIcon.gd" id="7_mj56w"]
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -17,40 +19,26 @@ grow_vertical = 2
 theme = ExtResource("1_xlljx")
 script = ExtResource("2_207jo")
 
-[node name="SubViewport" type="SubViewportContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -38.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewport"]
-unique_name_in_owner = true
-handle_input_locally = false
-render_target_update_mode = 4
-
-[node name="RoverControllerWindow" type="Window" parent="SubViewport/SubViewport"]
+[node name="RoverControllerWindow" type="Window" parent="."]
 title = "RoverController.exe"
 position = Vector2i(50, 50)
 size = Vector2i(400, 300)
 
-[node name="Mars" parent="SubViewport/SubViewport/RoverControllerWindow" instance=ExtResource("1_prma1")]
+[node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
 
-[node name="MemoryManager" type="Window" parent="SubViewport/SubViewport"]
+[node name="MemoryManager" type="Window" parent="."]
 title = "Memory Manager"
 position = Vector2i(480, 66)
 size = Vector2i(300, 400)
 
-[node name="MemoryManagerBase" parent="SubViewport/SubViewport/MemoryManager" instance=ExtResource("3_hlkov")]
+[node name="MemoryManagerBase" parent="MemoryManager" instance=ExtResource("3_hlkov")]
 
-[node name="Score" type="Window" parent="SubViewport/SubViewport"]
+[node name="Score" type="Window" parent="."]
 title = "Score"
-position = Vector2i(10, 450)
+position = Vector2i(10, 426)
 size = Vector2i(200, 100)
 
-[node name="ScorePanel" parent="SubViewport/SubViewport/Score" instance=ExtResource("5_b3l3f")]
+[node name="ScorePanel" parent="Score" instance=ExtResource("5_b3l3f")]
 
 [node name="Taskbar" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 38)
@@ -59,6 +47,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -88,3 +77,30 @@ text = "RoverController.exe"
 [node name="MemoryManagerButton" type="Button" parent="Taskbar/HBoxContainer"]
 layout_mode = 2
 text = "Memory Manager"
+
+[node name="SaveIcon" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -109.0
+offset_right = -20.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("7_mj56w")
+
+[node name="TextureRect" type="TextureRect" parent="SaveIcon"]
+layout_mode = 2
+texture = ExtResource("7_d57pg")
+
+[node name="Label" type="Label" parent="SaveIcon"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Save"
+
+[connection signal="mouse_entered" from="SaveIcon" to="SaveIcon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SaveIcon" to="SaveIcon" method="_on_mouse_exited"]
