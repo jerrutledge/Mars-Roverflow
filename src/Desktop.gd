@@ -35,7 +35,7 @@ func _on_open_item(item):
 
 func _on_game_over():
 	add_child(game_over_popup.instantiate())
-	
+
 func play_bing():
 	$bing.play()
 	
@@ -47,7 +47,10 @@ func play_success():
 	
 func play_delete():
 	$delete.play()
-	
+
+func play_virus():
+	$virus.play()
+
 func delete_info_log():
 	window_minimized = true
 

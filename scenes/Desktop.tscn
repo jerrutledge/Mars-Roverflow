@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=17 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c480xiv051b7t" path="res://assets/success.wav" id="10_boige"]
 [ext_resource type="AudioStream" uid="uid://danmihiirf01m" path="res://assets/failure.wav" id="11_4plt2"]
 [ext_resource type="AudioStream" uid="uid://k7n6uhp3qrov" path="res://assets/delet2.wav" id="12_64x4w"]
+[ext_resource type="AudioStream" uid="uid://y4fogq06fgvu" path="res://assets/virus.wav" id="15_xb16i"]
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -169,6 +170,9 @@ stream = ExtResource("10_boige")
 
 [node name="failure" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_4plt2")
+
+[node name="virus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_xb16i")
 
 [node name="delete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_64x4w")
