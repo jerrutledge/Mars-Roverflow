@@ -50,6 +50,9 @@ func play_delete():
 
 func play_virus():
 	$virus.play()
+	
+func play_zap():
+	$zap.play()
 
 func delete_info_log():
 	window_minimized = true

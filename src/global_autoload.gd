@@ -34,6 +34,11 @@ func _on_open_item(item : Node):
 func game_over():
 	get_tree().paused = true
 	game_over_sig.emit()
+	
+func hit_virus(): 	
+	desktop.play_zap()
+	score -= 10
+	new_score.emit(score)
 
 func restart():
 	score = 0
