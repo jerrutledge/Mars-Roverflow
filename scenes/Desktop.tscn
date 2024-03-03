@@ -28,6 +28,8 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewport"]
 unique_name_in_owner = true
+handle_input_locally = false
+render_target_update_mode = 4
 
 [node name="RoverControllerWindow" type="Window" parent="SubViewport/SubViewport"]
 title = "RoverController.exe"
