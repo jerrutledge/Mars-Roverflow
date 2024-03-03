@@ -17,7 +17,7 @@ var timer : Timer = null
 func _ready():
 	if data == "":
 		var element_index = -1
-		if (randi() %2 > 0):
+		if (randi() %2 > 0 and not is_virus):
 			contains_element = true
 			element_index = randi() % 20
 		
@@ -60,9 +60,11 @@ func _input(event):
 			$SelectRect.visible = false
 	if Input.is_action_pressed('delete'):
 		if selected:
+
 			delete_item()
 
 func delete_item():
+	Global.play_deleted_sound()
 	deleted.emit()
 	queue_free()
 

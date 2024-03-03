@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnclkmmwhfs6v"]
+[gd_scene load_steps=5 format=3 uid="uid://dnclkmmwhfs6v"]
 
 [ext_resource type="Script" path="res://src/collectible.gd" id="1_4fng8"]
 [ext_resource type="Texture2D" uid="uid://dkjn75sw2c8oc" path="res://assets/Data_Collectible_Icon.png" id="2_sojln"]
+[ext_resource type="AudioStream" uid="uid://btoyjcxtpx1te" path="res://assets/ping3.wav" id="3_rppo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6yk"]
 size = Vector2(16, 16)
@@ -16,5 +17,8 @@ texture = ExtResource("2_sojln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bn6yk")
+
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rppo1")
 
 [connection signal="body_entered" from="." to="." method="_on_hit"]

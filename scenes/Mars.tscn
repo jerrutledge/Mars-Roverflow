@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
 [ext_resource type="Texture2D" uid="uid://cl8aa6nbfd13p" path="res://assets/Mars_Rift.jpg" id="2_qauqx"]
 [ext_resource type="PackedScene" uid="uid://dnclkmmwhfs6v" path="res://scenes/collectible.tscn" id="3_udfk4"]
+[ext_resource type="AudioStream" uid="uid://btoyjcxtpx1te" path="res://assets/ping3.wav" id="4_k8iwh"]
 
 [node name="Mars" type="Node2D"]
 script = ExtResource("1_a2hul")
@@ -52,3 +53,5 @@ autostart = true
 
 [connection signal="timeout" from="CollectibleTimer" to="." method="_on_collectible_timer_timeout"]
 [connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k8iwh")

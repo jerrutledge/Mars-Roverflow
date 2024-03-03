@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=13 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cty776kh62ayt" path="res://assets/File_image.png" id="7_d57pg"]
 [ext_resource type="Script" path="res://src/SaveIcon.gd" id="7_mj56w"]
 [ext_resource type="Script" path="res://src/DeleteIcon.gd" id="9_3sl5l"]
+[ext_resource type="AudioStream" uid="uid://ct2xj6h8eoawk" path="res://assets/ping2wav.wav" id="9_usi0u"]
+[ext_resource type="AudioStream" uid="uid://c480xiv051b7t" path="res://assets/success.wav" id="10_boige"]
+[ext_resource type="AudioStream" uid="uid://danmihiirf01m" path="res://assets/failure.wav" id="11_4plt2"]
+[ext_resource type="AudioStream" uid="uid://k7n6uhp3qrov" path="res://assets/delet2.wav" id="12_64x4w"]
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -130,6 +134,17 @@ stretch_mode = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Delete"
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_usi0u")
+
+[node name="success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_boige")
+
+[node name="failure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4plt2")
+
+[node name="delete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_64x4w")
 
 [connection signal="mouse_entered" from="SaveIcon" to="SaveIcon" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SaveIcon" to="SaveIcon" method="_on_mouse_exited"]

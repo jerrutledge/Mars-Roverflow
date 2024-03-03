@@ -19,6 +19,7 @@ func get_desktop():
 
 func item_collected():
 	score_add(5)
+	desktop.play_bing()
 	collect.emit()
 
 func make_new_virus(virus):
@@ -35,6 +36,13 @@ func restart():
 	score = 0
 	get_tree().reload_current_scene()
 
+func play_deleted_sound():
+	desktop.play_delete()
+
 func score_add(score_diff):
+	if score_diff > 10:
+		desktop.play_success()
+	if score_diff < 0:
+		desktop.play_failure()
 	score += score_diff
 	new_score.emit(score)

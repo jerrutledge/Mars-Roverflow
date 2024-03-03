@@ -3,8 +3,10 @@ extends Control
 var text_window = preload("res://scenes/TextWindow.tscn")
 var game_over_popup = preload("res://scenes/GameOver.tscn")
 var dragged_item = preload("res://scenes/DraggedData.tscn")
+@onready var bing1 = $bing
 
 @export var init_new_window : Vector2 = Vector2(400, 200)
+@export var bing = bing1
 
 var new_window_spawn : Vector2 = init_new_window
 
@@ -29,6 +31,18 @@ func _on_open_item(item):
 
 func _on_game_over():
 	add_child(game_over_popup.instantiate())
+	
+func play_bing():
+	$bing.play()
+	
+func play_failure():
+	$failure.play()
+	
+func play_success():
+	$success.play()
+	
+func play_delete():
+	$delete.play()
 
 func make_dragged_item(creator):
 	var new_item = dragged_item.instantiate()
