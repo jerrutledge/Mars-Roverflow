@@ -18,13 +18,15 @@ func _on_collectible_timer_timeout():
 
 func get_offscreen_coords():
 	var view : Rect2 = get_viewport_rect() * get_viewport_transform()
+	var spawn
+	var spawn_rect
 	for i in range(100):
-		var spawn = Vector2(randf_range(0, level_size.x), randf_range(0, level_size.y))
-		var spawn_rect = Rect2(spawn, Vector2(16,16))
+		spawn = Vector2(randf_range(0, level_size.x), randf_range(0, level_size.y))
+		spawn_rect = Rect2(spawn, Vector2(16,16))
 		if !spawn_rect.intersects(view):
 			return spawn + Vector2(8, 8)
-	var spawn = Vector2.ZERO
-	var spawn_rect = Rect2(spawn, Vector2(16,16))
+	spawn = Vector2.ZERO
+	spawn_rect = Rect2(spawn, Vector2(16,16))
 	if !spawn_rect.intersects(view):
 		return spawn + Vector2(8, 8)
 	return level_size - Vector2(8, 8)

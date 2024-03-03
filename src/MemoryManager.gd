@@ -8,6 +8,7 @@ var since_virus : int = 0
 func _ready():
 	Global.collect.connect(make_new_mem_item)
 	Global.new_virus.connect(replicate_virus)
+	Global.scramble.connect(scramble)
 
 func game_over_check():
 	if v_box_container.get_child_count() >= 8:
@@ -30,3 +31,11 @@ func replicate_virus(virus):
 	if virus:
 		new_item.data = virus.data
 	v_box_container.add_child(new_item)
+
+func scramble():
+	var start_children :Array = v_box_container.get_children()
+	for item in start_children:
+		v_box_container.remove_child(item)
+	start_children.shuffle()
+	for item in start_children:
+		v_box_container.add_child(item)

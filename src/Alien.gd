@@ -14,4 +14,5 @@ func _physics_process(delta):
 
 func _on_hit(_area):
 	Global.make_new_virus(null)
+	Global.emit_signal('scramble')
 	queue_free()
