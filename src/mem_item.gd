@@ -3,8 +3,12 @@ signal deleted
 
 @onready var label = $HBoxContainer/Label
 
+var words = ['Sufficiently', 'Arise', 'Atom', 'Bed', 'Immunology', 'Intl', 'Pointing', 'Feel', 'Goes', 'Put', 'Amazon', 'Assure', 'Ribbon', 'Announced', 'Dublin', 'Champion', 'Within', 'En', 'Yukon', 'Judgment', 'Perform', 'Tex', 'Aids', 'Striking', 'Hq', 'Continental', 'Slowly', 'Genres', 'Nissan', 'Mhz', 'Arrange', 'Grams', 'Staying', 'Recover', 'De', 'Encourage', 'Gibson', 'Official', 'Marijuana', 'Norway', 'Upcoming', 'Pays', 'Ce', 'Actually', 'Golf', 'Header', 'Continued', 'Acoustic', 'Inflation', 'Interpreted', 'Pf', 'Festival', 'Lanes', 'Combine', 'Mtv', 'Cos', 'Beside', 'Cliff', 'Establishment', 'Sublimedirectory', 'Horny', 'Arizona', 'Meanwhile', 'Jr', 'Twinks', 'Endorsement', 'Serve', 'Department', 'Convertible', 'Formerly', 'Vast', 'Federal', 'Cleaning', 'Summary', 'Rooms', 'Us', 'Adams', 'Aggressive', 'Aaron', 'Regard', 'Allocated', 'Pantyhose', 'Grown', 'Restrict', 'Sampling', 'Properly', 'Specialty', 'Seekers', 'His', 'Bolivia', 'Delays', 'Suggested', 'Transactions', 'Party', 'Rugs', 'Pray', 'Massachusetts', 'Activists', 'Pricing', 'Athletic', 'Routing', 'Severe', 'Lock', 'Independently', 'Explained', 'Wearing', 'Manufacturers', 'Lat', 'Beneath', 'Gene', 'Thriller', 'Bench', 'Adaptor', 'Var', 'Killer', 'Mysql', 'Trucks', 'Og', 'Eagle', 'Fishing', 'Diff', 'Photos', 'Bands', 'Patrol', 'Config', 'Offered', 'Tv', 'Note', 'Regularly', 'Capability', 'Aggregate', 'Author', 'Tender', 'Topless', 'Formed', 'Attached', 'Network', 'Generation', 'Consistently', 'Perceived', 'Global', 'Imperial', 'Decent', 'Deck', 'Rent', 'Clothes', 'Delivered', 'Spas', 'Trailers', 'Hope', 'Timely', 'Execute', 'Euros', 'Cox', 'Shannon', 'Cap', 'Genuine', 'Fool', 'Inch', 'Sucking', 'Grow', 'Singapore', 'Integrity', 'Ali', 'Enable', 'Advice', 'Festivals', 'Reasons', 'Crimes', 'Kai', 'Zero', 'Conceptual', 'Acid', 'Shipment', 'Pockets', 'Significance', 'Learning', 'Bush', 'Buttons', 'Perfectly', 'Were', 'Temperatures', 'Signal', 'Being', 'Desired', 'Bid', 'Replacing', 'Case', 'Regions', 'Providers', 'Blogger', 'Usgs', 'Direction', 'Decisions', 'Documented', 'Marble', 'Brave', 'Carmen', 'Maintain', 'Dependence', 'Went', 'Insulation', 'Muscle', 'Insured', 'Institution', 'Incomplete', 'Robert', 'All', 'Late', 'Instantly', 'Receptor', 'Pointer', 'Anthony', 'Makers', 'Else', 'November', 'Rogers', 'Nb', 'Surgeon', 'Super', 'Thank', 'Ahead', 'Indonesia', 'Pads', 'Elect', 'Somebody', 'Baths', 'Recreational', 'Documentation', 'Preceding', 'Denial', 'Memo', 'Nerve', 'Diverse', 'Bankruptcy', 'Father', 'Aimed', 'Horses', 'Holder', 'Marc', 'Revolution', 'Columbia', 'Labeled', 'Shopper', 'Photo', 'Concerning', 'Forgot', 'Pipes', 'Release', 'Rank', 'Placement', 'Actress', 'Pg', 'Forestry', 'Usr', 'Reno', 'Readers', 'Searching', 'Artists', 'Compact', 'Qualification', 'Ethnic', 'Discover', 'Determining', 'Dans', 'Word', 'Willow', 'Objective', 'Rounds', 'Chairs', 'Achievements', 'Alike', 'Postal', 'Multiple', 'Congress', 'Insights', 'Effect', 'Boards', 'Activity', 'Hdtv', 'Thermal', 'Legend', 'Dept', 'Mexican', 'Scsi', 'Mistake', 'Offshore', 'Values', 'Sent', 'Don', 'H', 'Jefferson', 'Spank', 'Reload', 'Generator', 'Files', 'Pond', 'Darkness', 'Problems', 'Worship', 'Pamela', 'Collectibles', 'System', 'Contemporary', 'Characteristics', 'Grades', 'Canal', 'Lenders', 'Rights', 'Muslims', 'Crm', 'Center', 'Exemption', 'Beds', 'Transmission', 'Generated', 'Agrees', 'Chance', 'Constitution', 'Thumbzilla', 'Apt', 'Corpus', 'Deutsch', 'African', 'Promoting', 'Governance', 'Star', 'Vt', 'Followed', 'Stroke', 'Verified', 'Retreat', 'Completely', 'Nominated', 'Hb', 'Coast', 'Physical', 'Export', 'Range', 'Pubmed', 'Antenna', 'Less', 'Evaluations', 'Fiber', 'Workforce', 'Prospect', 'Nav', 'Candidates', 'Assign', 'Moments', 'Settings', 'Many', 'Vol', 'Okay', 'Label', 'Judges', 'Pool', 'Pearl', 'Celebrities', 'Identity', 'Guide', 'Volunteers', 'Conduct', 'Victorian', 'Bangbus', 'Belgium', 'Scanner', 'Thesis', 'Product', 'Dealtime', 'Modifications', 'Ea', 'Roy', 'Holy', 'Sussex', 'Affiliate', 'Construct', 'Mumbai', 'Zshops', 'Ratio', 'Reviewing', 'Wi', 'Machine', 'Adware', 'Secrets', 'Republican', 'Hobby', 'Prefix', 'Energy', 'Exclusively', 'Ought', 'Based', 'Presidential', 'Violin', 'Implement', 'Admin', 'Fraser', 'Scripts', 'Taxation', 'Suspected', 'Tiger', 'Jennifer', 'Highs', 'Expo', 'Surprise', 'Same', 'Deluxe', 'Furnished', 'Arising', 'Insider', 'Linux', 'Consider', 'Sets', 'Subscriptions', 'Knights', 'Shipping', 'Outlet', 'Children', 'Replied', 'Directory', 'Kills', 'Fun', 'Modeling', 'Trap', 'Marie', 'Serbia', 'Ram', 'Adsl', 'Extraordinary', 'Pole', 'Specials', 'Guns', 'Agreed', 'Sale', 'Sufficient', 'Outcomes', 'Badly', 'Submissions', 'Unions', 'Bennett', 'Tigers', 'Departments', 'Trainers', 'Jan', 'Measured', 'Ri', 'Italy', 'Yahoo', 'Florists', 'Weekly', 'Im', 'Korea', 'Edgar', 'Peru', 'Needs', 'Pack', 'Talk', 'Restrictions', 'Voluntary', 'Recent', 'Literature', 'Somalia', 'Readily', 'Nottingham', 'Screen', 'Valuable', 'Thinks', 'Robot', 'Soil', 'Tear', 'Ai', 'Unit', 'Somerset', 'Worst', 'Partnership', 'Enterprises', 'Bowl', 'Investor', 'Cheats', 'Room', 'Seek', 'Similar', 'Types', 'Clearing', 'Applications', 'Interest', 'Reveals', 'Kinase', 'Busty', 'Chapters', 'Stolen', 'Trademarks', 'Answers', 'Efficiency', 'Nil', 'Spotlight', 'Rated', 'Themselves', 'Evaluation', 'Cleanup']
+var elements = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Carbon', 'Nitrogen', 'Oxygen', 'Fluorine', 'Neon', 'Sodium', 'Magnesium', 'Aluminium', 'Silicon', 'Phosphorus', 'Sulfur', 'Chlorine', 'Argon', 'Potassium', 'Calcium', 'Scandium', 'Titanium', 'Vanadium', 'Chromium', 'Manganese', 'Iron', 'Cobalt', 'Nickel', 'Copper', 'Zinc', 'Gallium', 'Germanium', 'Arsenic', 'Selenium', 'Bromine', 'Krypton', 'Rubidium', 'Strontium', 'Yttrium', 'Zirconium', 'Niobium', 'Molybdenum', 'Technetium', 'Ruthenium', 'Rhodium', 'Palladium', 'Silver', 'Cadmium', 'Indium', 'Tin', 'Antimony', 'Tellurium', 'Iodine', 'Xenon', 'Caesium', 'Barium', 'Lanthanum', 'Cerium', 'Praseodymium', 'Neodymium', 'Promethium', 'Samarium', 'Europium', 'Gadolinium', 'Terbium', 'Dysprosium', 'Holmium', 'Erbium', 'Thulium', 'Ytterbium', 'Lutetium', 'Hafnium', 'Tantalum', 'Tungsten', 'Rhenium', 'Osmium', 'Iridium', 'Platinum', 'Gold', 'Mercury', 'Thallium', 'Lead', 'Bismuth', 'Polonium', 'Astatine', 'Radon', 'Francium', 'Radium', 'Actinium', 'Thorium', 'Protactinium', 'Uranium', 'Neptunium', 'Plutonium', 'Americium', 'Curium', 'Berkelium', 'Californium', 'Einsteinium', 'Fermium']
+
 var hex_chars = "0123456789ABCDEF"
 var data : String = ""
+var contains_element: bool = false
 var selected: bool = false
 var file_name: String = ""
 var is_virus: bool = false
@@ -12,8 +16,21 @@ var timer : Timer = null
 
 func _ready():
 	if data == "":
-		for i in range(200):
-			data = data + hex_chars[randi() % 16]
+		var element_index = -1
+		if (randi() %2 > 0):
+			contains_element = true
+			element_index = randi() % 20
+		
+		for i in range(20):
+			if i == element_index:
+				data += elements[randi() % len(elements)]
+			else:
+				data += words[randi() %len(words)]
+			for j in range(4):
+				data += hex_chars[randi() % 16]
+			
+		
+		
 	file_name = data.substr(0, 20) + "..."
 	label.text = file_name
 	if is_virus:
