@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=16 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]

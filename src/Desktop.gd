@@ -9,11 +9,14 @@ var dragged_item = preload("res://scenes/DraggedData.tscn")
 @export var bing = bing1
 
 var new_window_spawn : Vector2 = init_new_window
+var window_minimized: bool = false
 
 func _ready():
 	Global.open_item.connect(_on_open_item)
 	Global.game_over_sig.connect(_on_game_over)
 	Global.set_desktop(self)
+	if Global.info_minimized:
+		$Info.queue_free()
 
 func _on_open_item(item):
 	var window = text_window.instantiate()
@@ -43,6 +46,9 @@ func play_success():
 	
 func play_delete():
 	$delete.play()
+	
+func delete_info_log():
+	window_minimized = true
 
 func make_dragged_item(creator):
 	var new_item = dragged_item.instantiate()
