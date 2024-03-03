@@ -16,4 +16,5 @@ func _on_hit(_area):
 	Global.score_add(-10)
 	Global.make_new_virus(null)
 	Global.emit_signal('scramble')
+	Global.hit_virus()
 	queue_free()

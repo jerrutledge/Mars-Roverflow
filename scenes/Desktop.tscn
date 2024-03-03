@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=17 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c480xiv051b7t" path="res://assets/success.wav" id="10_boige"]
 [ext_resource type="AudioStream" uid="uid://danmihiirf01m" path="res://assets/failure.wav" id="11_4plt2"]
 [ext_resource type="AudioStream" uid="uid://k7n6uhp3qrov" path="res://assets/delet2.wav" id="12_64x4w"]
+[ext_resource type="AudioStream" uid="uid://byk2ulj7o2ljs" path="res://assets/zap.wav" id="16_uaprf"]
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -176,6 +177,8 @@ stream = ExtResource("12_64x4w")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+[node name="zap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_uaprf")
 
 [connection signal="close_requested" from="Info" to="Info" method="_on_close_requested"]
 [connection signal="mouse_entered" from="SaveIcon" to="SaveIcon" method="_on_mouse_entered"]

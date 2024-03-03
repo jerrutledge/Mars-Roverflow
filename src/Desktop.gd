@@ -48,6 +48,9 @@ func play_success():
 func play_delete():
 	$delete.play()
 	
+func play_zap():
+	$zap.play()
+	
 func delete_info_log():
 	window_minimized = true
 
