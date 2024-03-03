@@ -6,6 +6,7 @@ signal open_item(item)
 signal game_over_sig
 signal new_score(value)
 signal scramble
+signal update_memory
 
 var score : int = 0
 var desktop : Node = null

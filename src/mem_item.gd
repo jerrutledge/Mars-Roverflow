@@ -62,8 +62,11 @@ func _input(event):
 
 			delete_item()
 
-func delete_item():
-	Global.play_deleted_sound()
+func delete_item(and_play_sound = true):
+	if and_play_sound:
+		Global.play_deleted_sound()
+	get_parent().remove_child(self)
+	Global.update_memory.emit()
 	deleted.emit()
 	queue_free()
 

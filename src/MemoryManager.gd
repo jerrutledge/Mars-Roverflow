@@ -9,6 +9,7 @@ func _ready():
 	Global.collect.connect(make_new_mem_item)
 	Global.new_virus.connect(replicate_virus)
 	Global.scramble.connect(scramble)
+	Global.update_memory.connect(update_memory_count)
 	update_memory_count()
 
 func game_over_check():

@@ -181,6 +181,7 @@ stream = ExtResource("12_64x4w")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
 [node name="zap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_uaprf")
 
