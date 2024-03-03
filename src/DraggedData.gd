@@ -13,8 +13,12 @@ func _ready():
 
 func _process(_delta):
 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if Global.mouse_on_del:
+			if mem_item:
+				mem_item.delete_item()
+			queue_free()
+			return
 		if Global.mouse_on_save:
-			# save the item
 			if mem_item:
 				mem_item.queue_free()
 			if is_valid:
