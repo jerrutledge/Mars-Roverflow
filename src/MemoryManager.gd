@@ -9,6 +9,7 @@ func _ready():
 	Global.collect.connect(make_new_mem_item)
 	Global.new_virus.connect(replicate_virus)
 	Global.scramble.connect(scramble)
+	update_memory_count()
 
 func game_over_check():
 	if v_box_container.get_child_count() >= 8:
@@ -23,6 +24,7 @@ func make_new_mem_item():
 	else:
 		since_virus = 0
 	v_box_container.add_child(new_item)
+	update_memory_count()
 
 func replicate_virus(virus):
 	game_over_check()
@@ -31,6 +33,7 @@ func replicate_virus(virus):
 	if virus:
 		new_item.data = virus.data
 	v_box_container.add_child(new_item)
+	update_memory_count()
 
 func scramble():
 	var start_children :Array = v_box_container.get_children()
@@ -39,3 +42,8 @@ func scramble():
 	start_children.shuffle()
 	for item in start_children:
 		v_box_container.add_child(item)
+	update_memory_count()
+
+func update_memory_count():
+	var num = %VBoxContainer.get_child_count()
+	%Label.text = "Memory: " + str(num) + "kB / 8kB used"
