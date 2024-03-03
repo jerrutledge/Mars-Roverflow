@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://chy4t5p2lyr58"]
 
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_n3stx"]
-[ext_resource type="Script" path="res://scenes/TextWindow.gd" id="2_wf6u5"]
+[ext_resource type="Script" path="res://src/TextWindow.gd" id="2_wf6u5"]
 
 [node name="TextWindow" type="Window"]
 title = "Text Window"
