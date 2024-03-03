@@ -7,6 +7,13 @@ signal game_over_sig
 signal new_score(value)
 
 var score : int = 0
+var desktop : Node = null
+
+func set_desktop(object):
+	desktop = object
+
+func get_desktop():
+	return desktop
 
 func item_collected():
 	score_add(5)

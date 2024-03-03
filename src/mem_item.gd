@@ -1,7 +1,6 @@
 extends ReferenceRect
 signal deleted
 
-
 @onready var label = $HBoxContainer/Label
 
 var hex_chars = "0123456789ABCDEF"
@@ -27,7 +26,6 @@ func _ready():
 var double_click_limit = 200.0
 var last_click_time = 0.0
 
-
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if position.x < event.position.x and event.position.x < position.x + size.x and \
@@ -39,6 +37,7 @@ func _input(event):
 				Global._on_open_item(self)
 			else:
 				last_click_time = current_time
+				Global.get_desktop().make_dragged_item(self)
 		else:
 			selected = true
 			$SelectRect.visible = false
@@ -53,3 +52,6 @@ func delete_item():
 func replicate():
 	Global.make_new_virus(self)
 	timer.start(randi_range(10, 18))
+
+func _on_moved():
+	queue_free()

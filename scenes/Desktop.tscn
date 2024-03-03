@@ -17,26 +17,38 @@ grow_vertical = 2
 theme = ExtResource("1_xlljx")
 script = ExtResource("2_207jo")
 
-[node name="RoverControllerWindow" type="Window" parent="."]
+[node name="SubViewport" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewport"]
+unique_name_in_owner = true
+
+[node name="RoverControllerWindow" type="Window" parent="SubViewport/SubViewport"]
 title = "RoverController.exe"
 position = Vector2i(50, 50)
 size = Vector2i(400, 300)
 
-[node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
+[node name="Mars" parent="SubViewport/SubViewport/RoverControllerWindow" instance=ExtResource("1_prma1")]
 
-[node name="MemoryManager" type="Window" parent="."]
+[node name="MemoryManager" type="Window" parent="SubViewport/SubViewport"]
 title = "Memory Manager"
 position = Vector2i(480, 66)
 size = Vector2i(300, 400)
 
-[node name="MemoryManagerBase" parent="MemoryManager" instance=ExtResource("3_hlkov")]
+[node name="MemoryManagerBase" parent="SubViewport/SubViewport/MemoryManager" instance=ExtResource("3_hlkov")]
 
-[node name="Score" type="Window" parent="."]
+[node name="Score" type="Window" parent="SubViewport/SubViewport"]
 title = "Score"
 position = Vector2i(10, 450)
 size = Vector2i(200, 100)
 
-[node name="ScorePanel" parent="Score" instance=ExtResource("5_b3l3f")]
+[node name="ScorePanel" parent="SubViewport/SubViewport/Score" instance=ExtResource("5_b3l3f")]
 
 [node name="Taskbar" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 38)

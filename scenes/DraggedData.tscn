@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfxxyhpfib0po"]
+
+[ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="1_dfek2"]
+[ext_resource type="Script" path="res://src/DraggedData.gd" id="2_paur5"]
+
+[node name="DraggedData" type="Sprite2D"]
+visible = false
+texture = ExtResource("1_dfek2")
+script = ExtResource("2_paur5")
