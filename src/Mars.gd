@@ -14,7 +14,7 @@ func _on_collectible_timer_timeout():
 	var new_collectible : Node2D = collectible_obj.instantiate()
 	new_collectible.position = get_offscreen_coords()
 	collectibles.add_child(new_collectible)
-	collectible_timer.start(randi_range(3, 8))
+	collectible_timer.start(randi_range(2, 5))
 
 func get_offscreen_coords():
 	var view : Rect2 = get_viewport_rect() * get_viewport_transform()
