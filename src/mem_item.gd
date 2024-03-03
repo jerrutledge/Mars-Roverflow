@@ -30,9 +30,7 @@ func _ready():
 			for j in range(4):
 				#data += hex_chars[randi() % 16]
 				data += '     '
-		
-		
-	file_name = data.substr(0, 20) + "..."
+	file_name = data.substr(0, data.find(" ")) + ".txt"
 	label.text = file_name
 	if is_virus:
 		timer = Timer.new()
