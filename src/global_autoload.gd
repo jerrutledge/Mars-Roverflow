@@ -9,6 +9,7 @@ signal new_score(value)
 var score : int = 0
 
 func item_collected():
+	score_add(5)
 	collect.emit()
 
 func make_new_virus(virus):
@@ -27,3 +28,4 @@ func restart():
 
 func score_add(score_diff):
 	score += score_diff
+	new_score.emit(score)
