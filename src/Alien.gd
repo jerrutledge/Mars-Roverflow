@@ -13,6 +13,7 @@ func _physics_process(delta):
 	position += vel * delta
 
 func _on_hit(_area):
+	Global.score_add(-10)
 	Global.make_new_virus(null)
 	Global.emit_signal('scramble')
 	queue_free()

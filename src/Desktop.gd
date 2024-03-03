@@ -14,6 +14,7 @@ func _ready():
 	Global.open_item.connect(_on_open_item)
 	Global.game_over_sig.connect(_on_game_over)
 	Global.set_desktop(self)
+	Global.score = 100
 
 func _on_open_item(item):
 	var window = text_window.instantiate()
@@ -49,3 +50,7 @@ func make_dragged_item(creator):
 	new_item.mem_item = creator
 	add_child(new_item)
 	return new_item
+
+func _on_timer_timeout():
+	Global.score_add(-1)
+	$Timer.start(5)

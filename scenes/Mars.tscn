@@ -41,6 +41,15 @@ position = Vector2(554, 268)
 [node name="Collectible5" parent="Collectibles" instance=ExtResource("3_udfk4")]
 position = Vector2(665, 171)
 
+[node name="Collectible6" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(180, 926)
+
+[node name="Collectible7" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(825, 985)
+
+[node name="Collectible8" parent="Collectibles" instance=ExtResource("3_udfk4")]
+position = Vector2(136, 688)
+
 [node name="Aliens" type="Node2D" parent="."]
 
 [node name="CollectibleTimer" type="Timer" parent="."]
