@@ -11,11 +11,12 @@
 
 [node name="DraggedData" type="Window"]
 process_mode = 3
+transparent_bg = true
+handle_input_locally = false
 size = Vector2i(32, 32)
 visible = false
 unresizable = true
 borderless = true
-always_on_top = true
 transparent = true
 unfocusable = true
 mouse_passthrough = true
@@ -24,7 +25,7 @@ theme_override_styles/embedded_border = SubResource("StyleBoxEmpty_bdxqp")
 theme_override_styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_51cv3")
 script = ExtResource("2_paur5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="TextureRect" parent="."]
 unique_name_in_owner = true
+mouse_filter = 2
 texture = ExtResource("1_dfek2")
-offset = Vector2(16, 16)

@@ -3,8 +3,7 @@ extends Window
 var mem_item : Node = null
 var held : bool = false
 var init_pos : Vector2 = Vector2.ZERO
-@onready var sprite_2d : Sprite2D = %Sprite2D
-@onready var sprite_size : Vector2 = sprite_2d.texture.get_size()
+@onready var is_valid : bool = mem_item.contains_element
 
 func _ready():
 	init_pos = Global.get_desktop().get_global_mouse_position()
@@ -14,6 +13,15 @@ func _ready():
 
 func _process(_delta):
 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if Global.mouse_on_save:
+			# save the item
+			if mem_item:
+				mem_item.queue_free()
+			if is_valid:
+				Global.score_add(50)
+			queue_free()
+			return
+		# release the item
 		if mem_item:
 			mem_item.show()
 		queue_free()
@@ -27,7 +35,7 @@ func _process(_delta):
 			if mem_item:
 				mem_item.hide()
 	else:
-		position = mousepos - (sprite_size / 2)
+		position = mousepos - (Vector2(size) / 2)
 
 func _on_item_delete():
 	mem_item = null

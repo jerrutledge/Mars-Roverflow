@@ -8,6 +8,7 @@ signal new_score(value)
 
 var score : int = 0
 var desktop : Node = null
+var mouse_on_save = false
 
 func set_desktop(object):
 	desktop = object
