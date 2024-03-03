@@ -20,7 +20,7 @@ func _process(_delta):
 			return
 		if Global.mouse_on_save:
 			if mem_item:
-				mem_item.queue_free()
+				mem_item.delete_item()
 			if is_valid:
 				Global.score_add(50)
 			else:
