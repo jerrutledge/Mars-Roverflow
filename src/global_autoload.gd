@@ -12,6 +12,7 @@ var desktop : Node = null
 var player : Node = null
 var mouse_on_save = false
 var mouse_on_del = false
+var info_minimized: bool = false
 
 func set_desktop(object):
 	desktop = object
@@ -37,6 +38,8 @@ func game_over():
 func restart():
 	score = 0
 	get_tree().reload_current_scene()
+	if info_minimized:
+		desktop.delete_info_log()
 
 func play_deleted_sound():
 	desktop.play_delete()
