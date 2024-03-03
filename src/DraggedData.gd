@@ -19,6 +19,8 @@ func _process(_delta):
 				mem_item.queue_free()
 			if is_valid:
 				Global.score_add(50)
+			else:
+				Global.score_add(-25)
 			queue_free()
 			return
 		# release the item
