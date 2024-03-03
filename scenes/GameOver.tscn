@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://dj4ugavjdk01d"]
+[gd_scene load_steps=2 format=3 uid="uid://dj4ugavjdk01d"]
+
+[ext_resource type="Script" path="res://src/GameOver.gd" id="1_oe6hn"]
 
 [node name="GameOver" type="Window"]
+process_mode = 3
 title = "Game Over"
 initial_position = 2
 size = Vector2i(120, 120)
+script = ExtResource("1_oe6hn")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -21,7 +25,7 @@ grow_horizontal = 2
 text = "You ran out of memory! Continue?"
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="ContinueButton" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -34,3 +38,5 @@ offset_right = 15.5
 grow_horizontal = 2
 grow_vertical = 0
 text = "OK"
+
+[connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]
