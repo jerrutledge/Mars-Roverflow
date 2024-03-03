@@ -4,6 +4,9 @@ signal collect
 signal new_virus(virus)
 signal open_item(item)
 signal game_over_sig
+signal new_score(value)
+
+var score : int = 0
 
 func item_collected():
 	collect.emit()
@@ -17,3 +20,10 @@ func _on_open_item(item : Node):
 func game_over():
 	get_tree().paused = true
 	game_over_sig.emit()
+
+func restart():
+	score = 0
+	get_tree().reload_current_scene()
+
+func score_add(score_diff):
+	score += score_diff
