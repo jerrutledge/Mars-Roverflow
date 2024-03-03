@@ -19,6 +19,7 @@ Button/styles/hover = ExtResource("1_ix63b")
 Button/styles/normal = ExtResource("1_ix63b")
 Button/styles/pressed = ExtResource("2_pitj5")
 HBoxContainer/constants/separation = 4
+Label/colors/font_color = Color(0, 0, 0, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_p665n")
 Window/colors/title_color = Color(1, 1, 1, 1)
 Window/constants/close_h_offset = 20
