@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dssepk3bcd32j"]
+[gd_scene load_steps=4 format=3 uid="uid://dssepk3bcd32j"]
 
 [ext_resource type="Texture2D" uid="uid://qc5k8aodpp2u" path="res://assets/nasa_logo_icon_170926.png" id="1_sflfe"]
 [ext_resource type="Script" path="res://src/mem_item.gd" id="1_tbqdm"]
+[ext_resource type="Texture2D" uid="uid://duf42g3sg1wv4" path="res://assets/thrash_can_icon-export.png" id="3_0d7g8"]
 
 [node name="MemItem" type="ReferenceRect"]
 custom_minimum_size = Vector2(0, 37)
@@ -51,5 +52,7 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 2
+icon = ExtResource("3_0d7g8")
+expand_icon = true
 
 [connection signal="pressed" from="Button" to="." method="delete_item"]
