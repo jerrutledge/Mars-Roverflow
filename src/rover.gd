@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 250
 @export var level_size : Vector2 = Vector2(1000,1000)
 @onready var camera_2d : Camera2D = $Camera2D
 
@@ -10,6 +10,7 @@ func _ready():
 	camera_2d.limit_top = 0
 	camera_2d.limit_right = int(level_size.x)
 	camera_2d.limit_bottom = int(level_size.y)
+	Global.player = self
 
 func _process(delta):
 	var vel = Vector2.ZERO # The player's movement vector.
@@ -27,3 +28,6 @@ func _process(delta):
 	
 	position += vel * delta
 	position = position.clamp(Vector2(16,16), level_size - Vector2(16,16))
+
+func _on_tree_exiting():
+	Global.player = null

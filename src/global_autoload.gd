@@ -8,6 +8,7 @@ signal new_score(value)
 
 var score : int = 0
 var desktop : Node = null
+var player : Node = null
 var mouse_on_save = false
 var mouse_on_del = false
 

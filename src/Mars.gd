@@ -29,7 +29,6 @@ func get_offscreen_coords():
 		return spawn + Vector2(8, 8)
 	return level_size - Vector2(8, 8)
 
-
 func _on_alien_timer_timeout():
 	alien_timer.start(randi_range(16, 32))
 	if aliens.get_child_count() >= 8:
