@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://db87imsybado5"]
+[gd_scene load_steps=6 format=3 uid="uid://db87imsybado5"]
 
 [ext_resource type="Script" path="res://src/Mars.gd" id="1_a2hul"]
 [ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
@@ -51,7 +51,8 @@ autostart = true
 unique_name_in_owner = true
 autostart = true
 
-[connection signal="timeout" from="CollectibleTimer" to="." method="_on_collectible_timer_timeout"]
-[connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_k8iwh")
+
+[connection signal="timeout" from="CollectibleTimer" to="." method="_on_collectible_timer_timeout"]
+[connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]
