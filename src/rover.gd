@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 250
+@export var speed = 300
 @export var level_size : Vector2 = Vector2(1000,1000)
 @onready var camera_2d : Camera2D = $Camera2D
 
