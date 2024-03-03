@@ -35,5 +35,5 @@ func _on_alien_timer_timeout():
 		return # too many aliens already
 	var new_alien : Node2D = alien_obj.instantiate()
 	new_alien.position = get_offscreen_coords()
-	new_alien.run_speed += aliens.get_child_count() * 16
+	new_alien.run_speed += aliens.get_child_count() * 28
 	aliens.add_child(new_alien)
