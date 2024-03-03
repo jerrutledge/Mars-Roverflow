@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://db87imsybado5"]
+[gd_scene load_steps=5 format=3 uid="uid://db87imsybado5"]
 
+[ext_resource type="Script" path="res://src/Mars.gd" id="1_a2hul"]
 [ext_resource type="PackedScene" uid="uid://b2owmrpbbdqoe" path="res://scenes/rover.tscn" id="1_rvqjd"]
 [ext_resource type="Texture2D" uid="uid://cl8aa6nbfd13p" path="res://assets/Mars_Rift.jpg" id="2_qauqx"]
 [ext_resource type="PackedScene" uid="uid://dnclkmmwhfs6v" path="res://scenes/collectible.tscn" id="3_udfk4"]
 
 [node name="Mars" type="Node2D"]
+script = ExtResource("1_a2hul")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qauqx")
 
 [node name="Background2" type="TextureRect" parent="."]
 offset_top = 860.0
 offset_right = 1700.0
 offset_bottom = 1733.0
-texture = ExtResource("2_qauqx")
-
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
 texture = ExtResource("2_qauqx")
 
 [node name="Rover" parent="." instance=ExtResource("1_rvqjd")]
@@ -37,3 +39,9 @@ position = Vector2(554, 268)
 
 [node name="Collectible5" parent="Collectibles" instance=ExtResource("3_udfk4")]
 position = Vector2(665, 171)
+
+[node name="CollectibleTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="timeout" from="CollectibleTimer" to="." method="_on_collectible_timer_timeout"]
