@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c56tvgim4qckr"]
+
+[ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_hkda1"]
+[ext_resource type="Script" path="res://src/PauseMenu.gd" id="2_a7rwq"]
+
+[node name="PauseMenu" type="Window"]
+process_mode = 3
+title = "Game Paused"
+initial_position = 2
+size = Vector2i(400, 400)
+theme = ExtResource("1_hkda1")
+script = ExtResource("2_a7rwq")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game Options" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Game Options"]
+layout_mode = 2
+text = "Resume Game (esc)"
+
+[node name="Controls" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="TabContainer/Controls"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Controls:
+- WASD to move the robot
+- Double click on data to open it (necessary to check for the word 'carbon')
+- backspace/delete to delete a selected data item"
+
+[node name="Tutorial" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="TabContainer/Tutorial"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 3
+text = "You are piloting a rover through mars. Your objective is to collect as much data as possible, but there are aliens who are trying to overload your memory with viruses and useless data. Discard the viruses and save the data that contains the word 'carbon'. "
+
+[connection signal="close_requested" from="." to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="TabContainer/Game Options/Button" to="." method="_on_resume_button_pressed"]

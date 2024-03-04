@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=19 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/Info.gd" id="6_fjddm"]
 [ext_resource type="Texture2D" uid="uid://cty776kh62ayt" path="res://assets/File_image.png" id="7_d57pg"]
 [ext_resource type="Script" path="res://src/SaveIcon.gd" id="7_mj56w"]
+[ext_resource type="Script" path="res://src/Options.gd" id="8_2qw7m"]
 [ext_resource type="Script" path="res://src/DeleteIcon.gd" id="9_3sl5l"]
 [ext_resource type="AudioStream" uid="uid://ct2xj6h8eoawk" path="res://assets/ping2wav.wav" id="9_usi0u"]
 [ext_resource type="Texture2D" uid="uid://duf42g3sg1wv4" path="res://assets/thrash_can_icon-export.png" id="10_4yld6"]
@@ -29,13 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xlljx")
 script = ExtResource("2_207jo")
-
-[node name="RoverControllerWindow" type="Window" parent="."]
-title = "RoverController.exe"
-position = Vector2i(50, 50)
-size = Vector2i(400, 300)
-
-[node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
 
 [node name="MemoryManager" type="Window" parent="."]
 title = "Memory Manager"
@@ -73,6 +67,13 @@ text = "INFO for Rover Operators:
 -Avoid virus files(self-copying)
 -Do NOT exceed memory manager capacity!!"
 
+[node name="RoverControllerWindow" type="Window" parent="."]
+title = "RoverController.exe"
+position = Vector2i(50, 50)
+size = Vector2i(400, 300)
+
+[node name="Mars" parent="RoverControllerWindow" instance=ExtResource("1_prma1")]
+
 [node name="Taskbar" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 1
@@ -97,11 +98,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Options" type="Button" parent="Taskbar/HBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Options"
 icon = ExtResource("3_qhokj")
 expand_icon = true
+script = ExtResource("8_2qw7m")
 
 [node name="RoverControllerButton" type="Button" parent="Taskbar/HBoxContainer"]
 layout_mode = 2
@@ -186,6 +189,7 @@ autostart = true
 stream = ExtResource("16_uaprf")
 
 [connection signal="close_requested" from="Info" to="Info" method="_on_close_requested"]
+[connection signal="pressed" from="Taskbar/HBoxContainer/Options" to="Taskbar/HBoxContainer/Options" method="_on_pressed"]
 [connection signal="mouse_entered" from="SaveIcon" to="SaveIcon" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SaveIcon" to="SaveIcon" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="DeleteIcon" to="DeleteIcon" method="_on_mouse_entered"]

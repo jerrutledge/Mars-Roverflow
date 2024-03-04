@@ -7,6 +7,7 @@ signal game_over_sig
 signal new_score(value)
 signal scramble
 signal update_memory
+signal unpause
 
 var score : int = 0
 var desktop : Node = null
