@@ -20,6 +20,7 @@ var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_authentication_request()
 
 func _authentication_request():
@@ -100,6 +101,8 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	# Print data
 	print(json.get_data())
 	
+	leaderboard_data.emit(json.get_data)
+	
 	# Formatting as a leaderboard
 	var leaderboardFormatted = ""
 	for n in json.get_data().items.size():
@@ -108,7 +111,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 		leaderboardFormatted += str(json.get_data().items[n].score)+str("\n")
 	# Print the formatted leaderboard to the console
 	print(leaderboardFormatted)
-	
+
 	# Clear node
 	leaderboard_http.queue_free()
 
