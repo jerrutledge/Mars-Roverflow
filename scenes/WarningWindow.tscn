@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbolvrgb6ums7"]
+[gd_scene load_steps=3 format=3 uid="uid://dbolvrgb6ums7"]
 
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_vrkdx"]
+[ext_resource type="Script" path="res://scenes/WarningWindow.gd" id="2_5tae8"]
 
 [node name="WarningWindow" type="Window"]
 title = "WARNING -- INCORRECT DATA"
 size = Vector2i(400, 170)
 theme = ExtResource("1_vrkdx")
+script = ExtResource("2_5tae8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(5000, 5000)
@@ -27,3 +29,5 @@ text = "WARNING: IRRELEVANT DATA STORAGE DETECTED
 HARD DRIVE RESOURCES ARE LIMITED
 
 PLEASE STORE DATA PERTAINING TO 'CARBON' ONLY"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
