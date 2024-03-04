@@ -15,6 +15,7 @@ var player : Node = null
 var mouse_on_save = false
 var mouse_on_del = false
 var info_minimized: bool = false
+var warning_window = preload("res://scenes/WarningWindow.tscn")
 
 func set_desktop(object):
 	desktop = object
@@ -57,5 +58,9 @@ func score_add(score_diff, and_play_sound=true):
 			desktop.play_success()
 		if score_diff < 0:
 			desktop.play_failure()
+		if score_diff < -20:
+			var w_window = warning_window.instantiate()
+			w_window.position = Vector2(300, 300)
+			desktop.add_child(w_window)
 	score += score_diff
 	new_score.emit(score)
