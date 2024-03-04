@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbbrmh7qm2468"]
+
+[ext_resource type="AudioStream" uid="uid://xuwwo87nnlf8" path="res://assets/gameover.wav" id="1_gdj37"]
+
+[node name="GameOverAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_gdj37")

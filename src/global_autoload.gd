@@ -48,6 +48,7 @@ func restart():
 	get_tree().reload_current_scene()
 	if info_minimized:
 		desktop.delete_info_log()
+	desktop.play_begin()
 
 func play_deleted_sound():
 	desktop.play_delete()

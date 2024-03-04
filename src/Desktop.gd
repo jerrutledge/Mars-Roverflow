@@ -3,6 +3,7 @@ extends Control
 var text_window = preload("res://scenes/TextWindow.tscn")
 var game_over_popup = preload("res://scenes/GameOver.tscn")
 var dragged_item = preload("res://scenes/DraggedData.tscn")
+var game_over_audio = preload("res://scenes/GameOverAudio.tscn")
 @onready var bing1 = $bing
 
 @export var init_new_window : Vector2 = Vector2(400, 200)
@@ -18,6 +19,7 @@ func _ready():
 	Global.score = 100
 	if Global.info_minimized:
 		$Info.queue_free()
+	$begin.play()
 
 func _on_open_item(item):
 	var window = text_window.instantiate()
@@ -35,6 +37,8 @@ func _on_open_item(item):
 
 func _on_game_over():
 	add_child(game_over_popup.instantiate())
+	add_child(game_over_audio.instantiate())
+	$GameOverAudio.play()
 
 func play_bing():
 	$bing.play()
@@ -53,6 +57,12 @@ func play_virus():
 	
 func play_zap():
 	$zap.play()
+	
+func play_lose():
+	$lose.play()
+	
+func play_begin():
+	$begin.play()
 
 func delete_info_log():
 	window_minimized = true

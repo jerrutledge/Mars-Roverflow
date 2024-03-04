@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyhp0qnfe08rs"]
+[gd_scene load_steps=21 format=3 uid="uid://cyhp0qnfe08rs"]
 
 [ext_resource type="PackedScene" uid="uid://db87imsybado5" path="res://scenes/Mars.tscn" id="1_prma1"]
 [ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_xlljx"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://k7n6uhp3qrov" path="res://assets/delet2.wav" id="12_64x4w"]
 [ext_resource type="AudioStream" uid="uid://y4fogq06fgvu" path="res://assets/virus.wav" id="15_xb16i"]
 [ext_resource type="AudioStream" uid="uid://byk2ulj7o2ljs" path="res://assets/zap.wav" id="16_uaprf"]
+[ext_resource type="AudioStream" uid="uid://xuwwo87nnlf8" path="res://assets/gameover.wav" id="19_kq07u"]
+[ext_resource type="AudioStream" uid="uid://6ed23wd476au" path="res://assets/startw.wav" id="20_de3fc"]
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -187,6 +189,12 @@ autostart = true
 
 [node name="zap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_uaprf")
+
+[node name="lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_kq07u")
+
+[node name="begin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_de3fc")
 
 [connection signal="close_requested" from="Info" to="Info" method="_on_close_requested"]
 [connection signal="pressed" from="Taskbar/HBoxContainer/Options" to="Taskbar/HBoxContainer/Options" method="_on_pressed"]
