@@ -22,9 +22,13 @@ grow_vertical = 2
 [node name="Game Options" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TabContainer/Game Options"]
+[node name="ResumeButton" type="Button" parent="TabContainer/Game Options"]
 layout_mode = 2
 text = "Resume Game (esc)"
+
+[node name="QuitButton" type="Button" parent="TabContainer/Game Options"]
+layout_mode = 2
+text = "Quit Game"
 
 [node name="Controls" type="VBoxContainer" parent="TabContainer"]
 visible = false
@@ -50,4 +54,5 @@ size_flags_vertical = 3
 text = "You are piloting a rover through mars. Your objective is to collect as much data as possible, but there are aliens who are trying to overload your memory with viruses and useless data. Discard the viruses and save the data that contains the word 'carbon'. "
 
 [connection signal="close_requested" from="." to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="TabContainer/Game Options/Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="TabContainer/Game Options/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="TabContainer/Game Options/QuitButton" to="." method="_on_quit_button_pressed"]
