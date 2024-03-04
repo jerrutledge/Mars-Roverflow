@@ -128,8 +128,8 @@ func _upload_score(score: int):
 	print(data)
 
 func _change_player_name(new_name = ""):
-	if !new_name:
-		print("No player name. Not setting")
+	if !new_name or new_name == player_name:
+		print("No new player name. Not setting")
 		return
 	print("Changing player name to " + new_name)
 	

@@ -9,6 +9,8 @@ func _on_continue_button_pressed():
 func _ready():
 	Leaderboard._get_leaderboards()
 	Leaderboard.leaderboard_data.connect(_on_get_leaderboard)
+	%PlayerName.text = Leaderboard.player_name
+	%ScoreLabel.text = "Final score: " + str(Global.score)
 
 func _on_get_leaderboard(json):
 	for child in %Leaderboard.get_children():
@@ -26,3 +28,7 @@ func _on_get_leaderboard(json):
 		new_hs.player_name = str(json.get_data().items[n].player.name)
 		new_hs.score = str(json.get_data().items[n].score)
 		%Leaderboard.add_child(new_hs)
+
+func _on_upload_button_pressed():
+	Leaderboard._change_player_name(%PlayerName.text)
+	Leaderboard._upload_score(Global.score)
