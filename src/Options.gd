@@ -2,8 +2,8 @@ extends Button
 
 var pause_menu = preload("res://scenes/PauseMenu.tscn")
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
 		_on_pressed()
 
 func _on_pressed():
