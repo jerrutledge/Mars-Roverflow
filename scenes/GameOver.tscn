@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj4ugavjdk01d"]
+[gd_scene load_steps=3 format=3 uid="uid://dj4ugavjdk01d"]
 
 [ext_resource type="Script" path="res://src/GameOver.gd" id="1_oe6hn"]
+[ext_resource type="Theme" uid="uid://dpktb2f2xymkh" path="res://resources/theme.tres" id="1_p60j5"]
 
 [node name="GameOver" type="Window"]
 process_mode = 3
 title = "Game Over"
 initial_position = 2
-size = Vector2i(120, 120)
+size = Vector2i(500, 500)
+min_size = Vector2i(200, 200)
+theme = ExtResource("1_p60j5")
 script = ExtResource("1_oe6hn")
 
 [node name="Panel" type="Panel" parent="."]
@@ -22,7 +25,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 49.0
 grow_horizontal = 2
-text = "You ran out of memory! Restart?"
+text = "You ran out of memory! Here's the leaderboard:"
 autowrap_mode = 3
 
 [node name="ContinueButton" type="Button" parent="Panel"]
@@ -38,5 +41,24 @@ offset_right = 15.5
 grow_horizontal = 2
 grow_vertical = 0
 text = "Restart"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Leaderboard" type="VBoxContainer" parent="Panel/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Placeholder" type="Label" parent="Panel/ScrollContainer/Leaderboard"]
+layout_mode = 2
+text = "Loading leaderboard...
+"
 
 [connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]

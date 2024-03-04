@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbajhyoy0leup"]
+
+[ext_resource type="Script" path="res://src/high_score.gd" id="1_1pv4k"]
+
+[node name="HighScore" type="HBoxContainer"]
+script = ExtResource("1_1pv4k")
+
+[node name="Rank" type="Label" parent="."]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="PlayerScore" type="Label" parent="."]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "1234"
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 2
+text = "HighScorePlayer"

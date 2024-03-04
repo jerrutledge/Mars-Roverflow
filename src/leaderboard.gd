@@ -101,7 +101,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	# Print data
 	print(json.get_data())
 	
-	leaderboard_data.emit(json.get_data)
+	leaderboard_data.emit(json)
 	
 	# Formatting as a leaderboard
 	var leaderboardFormatted = ""
