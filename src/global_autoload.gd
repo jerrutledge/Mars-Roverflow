@@ -16,6 +16,7 @@ var mouse_on_save = false
 var mouse_on_del = false
 var info_minimized: bool = false
 var warning_window = preload("res://scenes/WarningWindow.tscn")
+var game_over_state = false
 
 func set_desktop(object):
 	desktop = object
@@ -36,8 +37,9 @@ func _on_open_item(item : Node):
 
 func game_over():
 	get_tree().paused = true
+	game_over_state = true
 	game_over_sig.emit()
-	
+
 func hit_virus(): 	
 	desktop.play_zap()
 	score -= 10

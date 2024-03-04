@@ -17,6 +17,8 @@ func _ready():
 	Global.game_over_sig.connect(_on_game_over)
 	Global.set_desktop(self)
 	Global.score = 100
+	Global.score_add(0)
+	Global.game_over_state = false
 	if Global.info_minimized:
 		$Info.queue_free()
 	$begin.play()

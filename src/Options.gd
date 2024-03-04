@@ -11,4 +11,5 @@ func _on_pressed():
 		Global.desktop.add_child(pause_menu.instantiate())
 	else:
 		Global.unpause.emit()
-	get_tree().paused = !get_tree().paused
+	if !Global.game_over_state:
+		get_tree().paused = !get_tree().paused
