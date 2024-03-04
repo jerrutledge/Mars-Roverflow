@@ -10,7 +10,7 @@ var development_mode = true
 var leaderboard_key = "mr_leaderboard"
 var session_token = ""
 var score = 0
-
+var player_name = ""
 # HTTP Request node can only handle one call per node
 var auth_http = HTTPRequest.new()
 var leaderboard_http = HTTPRequest.new()
@@ -76,6 +76,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	# Clear node
 	auth_http.queue_free()
 	# Get leaderboards
+	_get_player_name()
 	_get_leaderboards()
 
 
@@ -123,13 +124,13 @@ func _upload_score(score: int):
 	# Print what we're sending, for debugging purposes:
 	print(data)
 
-func _change_player_name():
-	print("Changing player name")
+func _change_player_name(new_name = ""):
+	if !new_name:
+		print("No player name. Not setting")
+		return
+	print("Changing player name to " + new_name)
 	
-	# use this variable for setting the name of the player
-	var player_name = "newName"
-	
-	var data = { "name": str(player_name) }
+	var data = { "name": str(new_name) }
 	var url =  "https://api.lootlocker.io/game/player/name"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
@@ -147,6 +148,7 @@ func _on_player_set_name_request_completed(result, response_code, headers, body)
 	# Print data
 	print(json.get_data())
 	set_name_http.queue_free()
+	_get_player_name()
 
 func _get_player_name():
 	print("Getting player name")
@@ -167,7 +169,14 @@ func _on_player_get_name_request_completed(result, response_code, headers, body)
 	# Print data
 	print(json.get_data())
 	# Print player name
+	player_name = json.get_data().name
 	print(json.get_data().name)
+	if player_name == "":
+		var hexchars = "1234567890ABCDEF"
+		var random_name = ""
+		for i in range(8):
+			random_name += hexchars[randi() % 16]
+		_change_player_name(random_name)
 
 func _on_upload_score_request_completed(result, response_code, headers, body) :
 	var json = JSON.new()
